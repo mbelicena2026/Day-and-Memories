@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <title>Start Game</title>
+<style>
+body {
+    background-image: url('startbg.gif'); 
+    background-repeat: repeat; 
+  font-family: 'Caveat', cursive;
+}
+
+.page {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.page-transition {
+  opacity: 0;
+}
+
+.glow {
+  font-size: 90px;
+  color: #fff;
+  text-align: center;
+  margin: 0%;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.glow2 {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  margin: 0%;
+  animation: glow2 1s ease-in-out infinite alternate;
+}
+
+.box {
+    padding-top: 400px;
+    text-align: center;
+}
+
+#img {
+    animation: glow3 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4e4e4e, 0 0 40px #4e4e4e, 0 0 50px #4e4e4e, 0 0 60px #4e4e4e, 0 0 70px #4e4e4e;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #b7b7b7, 0 0 40px #b7b7b7, 0 0 50px #b7b7b7, 0 0 60px #b7b7b7, 0 0 70px #b7b7b7, 0 0 80px #b7b7b7;
+  }
+}
+
+@-webkit-keyframes glow2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4e4e4e, 0 0 40px #4e4e4e, 0 0 50px #4e4e4e, 0 0 60px #4e4e4e, 0 0 70px #4e4e4e;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+  }
+}
+</style>
+<script>
+</script>
+</head>
+<body class="page">
+<div class="box">
+<h1 class="glow">Day and Memories</h1>
+<img id="img" src="line.png" alt="Line" style="width:300px;height:48px;">
+<p class="glow2">click anywhere to start</p>
+</div>
+</body>
+</html> 
