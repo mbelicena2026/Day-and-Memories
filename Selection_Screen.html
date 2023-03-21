@@ -6,3 +6,123 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <title>Starry Sonata</title>
+    <style>
+        body {
+            background-image: url('startbg.gif');
+            font-family: 'DotGothic16', sans-serif;
+        }
+
+        h1 {
+            font-size: 90px;
+        }
+
+        h2 {
+            font-size: 55px;
+        }
+
+        h3 {
+            font-size: 25px;
+        }
+
+        .page {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+        }
+
+        .page-transition {
+        opacity: 0;
+        }
+
+        .glow {
+        color: #fff;
+        text-align: center;
+        margin: 0%;
+        animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        .glow2 {
+        color: #ffffff78;
+        text-align: center;
+        margin: 0%;
+        animation: glow2 1s ease-in-out infinite alternate;
+        }
+
+        .bigbox {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .box1 {
+            margin-top: 150px;
+            margin-left: 200px;
+            margin-right: 200px;
+            text-align: center;
+            width: 300px;
+            border-width: 5px;
+            float: left;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            border-color: #ffffff;
+            border-style: solid;
+        }
+
+        .box2 {
+            margin-top: 250px;
+            margin-left: 200px;
+            margin-right: 200px;
+            text-align: center;
+            width: 220px;
+            border-width: 5px;
+            float: left;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 7px;
+            border-color: #ffffff;
+            border-style: solid;
+        }
+
+        #img {
+    animation: glow3 1s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes glow {
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4e4e4e, 0 0 40px #4e4e4e, 0 0 50px #4e4e4e, 0 0 60px #4e4e4e, 0 0 70px #4e4e4e;
+        }
+        
+        to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #b7b7b7, 0 0 40px #b7b7b7, 0 0 50px #b7b7b7, 0 0 60px #b7b7b7, 0 0 70px #b7b7b7, 0 0 80px #b7b7b7;
+        }
+        }
+
+        @-webkit-keyframes glow2 {
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #4e4e4e, 0 0 60px #4e4e4e, 0 0 70px #4e4e4e;
+        }
+        
+        to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+        }
+        }
+    </style>
+    </head>
+    <body class="page">
+        <h1 class="glow">Starry Sonata</h1>
+        <div class="bigbox">
+            <div class="box1">
+            <h2 class="glow">Song 1</h2>
+            </div>
+            <div class="box1">
+            <h2 class="glow">Song 2</h2>
+            </div>
+        </div>
+        <div class="bigbox">
+            <div class="box2">
+            <h3 class="glow">Developers' Page</h3>
+            </div>
+            <div class="box2">
+            <h3 class="glow">How to Play?</h3>
+            </div>
+        </div>
+    </body>
+    </html> 
