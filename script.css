@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DotGothic16', sans-serif;
+}
+
+body {
+    width: 100%;
+    background: url(https://cdn.discordapp.com/attachments/912732499069775992/1087349321856454718/startbg.gif);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+header h1 {
+    font-size: 80px;
+}
+
+section {
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+section p {
+    color: white;
+    text-align: justify;
+}
+
+.glow {
+    color: #fff;
+    text-align: center;
+    margin: 0%;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4e4e4e, 0 0 40px #4e4e4e, 0 0 50px #4e4e4e, 0 0 60px #4e4e4e, 0 0 70px #4e4e4e;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #b7b7b7, 0 0 40px #b7b7b7, 0 0 50px #b7b7b7, 0 0 60px #b7b7b7, 0 0 70px #b7b7b7, 0 0 80px #b7b7b7;
+    }
+  }
+
+#box1 {
+    margin: 0 auto;
+    text-align: center;
+    width: 1000px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    margin-top: 70px;
+    border: 3px solid #ffffff;
+} 
+
+#introduction {
+    text-align: center;
+    font-size: 15px;
+    margin: 10px 10px 10px 10px ;
+}
+
+section {
+    justify-content: space-around;
+    text-align: center;
+}
+
+.column {
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    width: 25%;
+}
+
+.row {
+    margin: 0 -5px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+}
