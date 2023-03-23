@@ -1,0 +1,189 @@
+on<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<title>Starry Sonata</title>
+<style>
+    body {
+        background-image: url('startbg.gif');
+        font-smooth: always;
+        -webkit-font-smoothing: antialiased;
+        font-family: 'DotGothic16', sans-serif;
+        height: 1080px;
+        width: 1980px;
+        overflow: hidden;
+    }
+
+    .title {
+        color: #ffffff;
+	animation-name: floating;
+    animation-name: glow;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+    float: right;
+    display: absolute;
+    margin-right: 100px;
+}
+
+@keyframes floating {
+	0% { transform: translate(0, 0px); }
+	50% { transform: translate(0, 15px); }
+	100% { transform: translate(0, -0px); }
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4e4e4e, 0 0 40px #4e4e4e, 0 0 50px #4e4e4e, 0 0 60px #4e4e4e, 0 0 70px #4e4e4e;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #b7b7b7, 0 0 40px #b7b7b7, 0 0 50px #b7b7b7, 0 0 60px #b7b7b7, 0 0 70px #b7b7b7, 0 0 80px #b7b7b7;
+  }
+}
+
+
+    .page-transition {
+        opacity: 0;
+    }
+
+    .button_box {
+        transform: rotate(6deg);
+        margin-top: 100px;
+    width: auto;
+    height: auto;
+    }
+
+    .button_box:not(:last-child) {
+        border-bottom: none;
+    }
+
+    /* Not our code */
+    .preserve-3d {
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+    }
+
+    .button_base {
+    margin: 0;
+    border: 0;
+    font-size: 100px;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -100px;
+    width: 1000px;
+    height: 250px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+    .button_base:hover {
+        cursor: pointer;
+    }
+
+    .b03_skewed_slide_in {
+        overflow: hidden;
+        border: #000000 solid 0px;
+    }
+
+    .b03_skewed_slide_in div {
+    position: absolute;
+    text-align: center;
+    width: 1200px;
+    height: 226px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 10px;
+}
+
+    .b03_skewed_slide_in div:nth-child(1) {
+        color: #ffffff;
+        background-color: #ffffff00;
+    }
+
+    .b03_skewed_slide_in div:nth-child(2) {
+    background-color: #ffffff;
+    width: 1200px;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transform: translate(-250px, 0px) skewX(-30deg);
+    -webkit-transform: translate(-1300px, 0px) skewX(-30deg);
+    -moz-transform: translate(-250px, 0px) skewX(-30deg);
+    height: 226px;
+}
+
+    .b03_skewed_slide_in div:nth-child(3) {
+        color: #000000;
+        left: -1200px;
+        transition: left 0.2s ease;
+        -webkit-transition: left 0.2s ease;
+        -moz-transition: left 0.2s ease;
+    }
+
+    .b03_skewed_slide_in:hover div:nth-child(2) {
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        transform: translate(-15px, 0px) skewX(-30deg);
+        -webkit-transform: translate(-15px, 0px) skewX(-30deg);
+        -moz-transform: translate(-15px, 0px) skewX(-30deg);
+    }
+
+    .b03_skewed_slide_in:hover div:nth-child(3) {
+        left: 0px;
+        transition: left 0.30000000000000004s ease;
+        -webkit-transition: left 0.30000000000000004s ease;
+        -moz-transition: left 0.30000000000000004s ease;
+    }
+</style>
+<script>
+        function song1() {
+    window.location.href = ("song1.html");
+    }   
+    function song2() {
+    window.location.href = ("song2.html");
+    }                                                                                                                                                                                             CCX 
+    function how2play() {
+    window.location.href = ("howtoplay.html");
+    }  
+function devpage() {
+    window.location.href = ("developerspage.html");
+    }  
+</script>
+</head>
+<body class="page">
+    <div class="button_box">
+        <div class="button_base b03_skewed_slide_in" onclick="song1()">
+            <div>Song 1</div>
+            <div></div>
+            <div>Song 1</div>
+        </div>
+        <div class="button_base b03_skewed_slide_in" onclick="song2()">
+            <div>Song 2</div>
+            <div></div>
+            <div>Song 2</div>
+        </div>
+        <div class="button_base b03_skewed_slide_in" onclick="how2play()">
+            <div>How to play</div>
+            <div></div>
+            <div>How to play</div>
+        </div>
+        <div class="button_base b03_skewed_slide_in" onclick="devpage()">
+            <div>About Developers'</div>
+            <div></div>
+            <div>About Developers'</div>
+        </div>
+    </div>
+</body>
+
+</html>

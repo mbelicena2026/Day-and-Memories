@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<title>Song 2</title>
+<style>
+	body {
+		background-image: url('song2.gif');
+		background-repeat: no-repeat;
+		background-size: cover;
+		font-family: 'DotGothic16', sans-serif;
+	}
+
+	h1 {
+		margin: 0px;
+	}
+
+	#game {
+		height: 650px;
+		width: 500px;
+		position: relative;
+		border: 3px solid rgb(255, 255, 255);
+		margin: auto;
+		overflow: hidden;
+	}
+
+	.note {
+		height: 63px;
+		width: 70px;
+		position: absolute;
+		top: -50px;
+		left: calc(50% - 25px);
+		background-image: url('note2.gif');
+		background-size: contain;
+	}
+
+	.note.left {
+		left: calc(13% - 25px);
+	}
+
+	.note.up {
+		left: calc(36% - 25px);
+	}
+
+	.note.down {
+		left: calc(60% - 25px);
+	}
+
+	.note.right {
+		left: calc(83% - 25px);
+	}
+
+	.hit-zone {
+		height: 63px;
+		width: 100%;
+		position: absolute;
+		top: 550px;
+		background-color: rgba(255, 255, 255, 0);
+		opacity: 0.5;
+		z-index: -1;
+	}
+
+	.score {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 24px;
+		font-weight: bold;
+		color: rgb(255, 255, 255);
+	}
+
+	#title {
+		height: 70px;
+		width: 500px;
+		border: 3px solid rgb(255, 255, 255);
+		margin-top: 10px;
+		margin-bottom: 20px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		color: white;
+		font-size: 20px;
+	}
+
+	#stats {
+		height: 180px;
+		width: 500px;
+		position: relative;
+		border: 3px solid rgb(255, 255, 255);
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#left {
+		height: 63px;
+		width: 70px;
+		margin-left: 39px;
+	}
+
+	#up {
+		height: 63px;
+		width: 70px;
+		margin-left: 39px;
+	}
+
+	#down {
+		height: 63px;
+		width: 70px;
+		margin-left: 39px;
+	}
+
+	#right {
+		height: 63px;
+		width: 70px;
+		margin-left: 39px;
+	}
+
+</style>
+</head>
+
+<body>
+	<div id="title">
+		<h1>Song 2</h1>
+	</div>
+	<div id="game">
+		<div class="hit-zone">
+			<img id="left" src="note2.gif" alt="Star">
+			<img id="up" src="note2.gif" alt="Star">
+			<img id="down" src="note2.gif" alt="Star">
+			<img id="right" src="note2.gif" alt="Star">
+		</div>
+	</div>
+	<div id="stats">
+		<div class="score">0</div>
+	</div>
+
+	<script>
+		//Vars
+		let score = 0;
+		const speed = 5;
+		const hitZone = document.querySelector('.hit-zone');
+		const notes = [];
+		let nextNoteTime = 0;
+
+		function updateScore() {
+			const scoreEl = document.querySelector('.score');
+			scoreEl.textContent = score;
+		}
+
+		//Notes chuchu
+		function moveNotes() {
+			for (let note of notes) {
+				const position = note.offsetTop + speed;
+				note.style.top = position + 'px';
+
+				if (position > hitZone.offsetTop && position < hitZone.offsetTop + hitZone.offsetHeight) {
+					if (note.classList.contains('up') && (keys.ArrowUp || keys.w)) {
+						score++;
+						updateScore();
+						note.remove();
+					}
+					if (note.classList.contains('down') && (keys.ArrowDown || keys.s)) {
+						score++;
+						updateScore();
+						note.remove();
+					}
+					if (note.classList.contains('left') && (keys.ArrowLeft || keys.a)) {
+						score++;
+						updateScore();
+						note.remove();
+					}
+					if (note.classList.contains('right') && (keys.ArrowRight || keys.d)) {
+						score++;
+						updateScore();
+						note.remove();
+					}
+				}
+				if (position > window.innerHeight) {
+					note.remove();
+				}
+			}
+		}
+		function createNote() {
+			const noteTypes = ['up', 'down', 'left', 'right'];
+			const randomNote = Math.floor(Math.random() * noteTypes.length);
+			const newNote = document.createElement('div');
+			newNote.classList.add('note', noteTypes[randomNote]);
+			document.querySelector('#game').appendChild(newNote);
+			notes.push(newNote);
+			nextNoteTime = performance.now() + Math.floor(Math.random() * 1000) + 500;
+		}
+
+		const keys = {};
+		document.addEventListener('keydown', (e) => {
+			keys[e.key] = true;
+		});
+		document.addEventListener('keyup', (e) => {
+			keys[e.key] = false;
+		});
+
+		function gameLoop() {
+			requestAnimationFrame(gameLoop);
+			const now = performance.now();
+			if (now > nextNoteTime) {
+				createNote();
+			}
+			moveNotes();
+		}
+		gameLoop();
+	</script>
