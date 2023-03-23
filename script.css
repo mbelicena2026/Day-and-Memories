@@ -10,6 +10,28 @@ body {
     background: url(https://cdn.discordapp.com/attachments/912732499069775992/1087349321856454718/startbg.gif);
 }
 
+a:link {
+    text-decoration: none;
+    color: white;}
+
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -36,32 +58,32 @@ section p {
     text-align: center;
     margin: 0%;
     animation: glow 1s ease-in-out infinite alternate;
-  }
+}
 
-  @-webkit-keyframes glow {
+@-webkit-keyframes glow {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4e4e4e, 0 0 40px #4e4e4e, 0 0 50px #4e4e4e, 0 0 60px #4e4e4e, 0 0 70px #4e4e4e;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4e4e4e, 0 0 40px #4e4e4e, 0 0 50px #4e4e4e, 0 0 60px #4e4e4e, 0 0 70px #4e4e4e;
     }
-    
+
     to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #b7b7b7, 0 0 40px #b7b7b7, 0 0 50px #b7b7b7, 0 0 60px #b7b7b7, 0 0 70px #b7b7b7, 0 0 80px #b7b7b7;
+        text-shadow: 0 0 20px #fff, 0 0 30px #b7b7b7, 0 0 40px #b7b7b7, 0 0 50px #b7b7b7, 0 0 60px #b7b7b7, 0 0 70px #b7b7b7, 0 0 80px #b7b7b7;
     }
-  }
+}
+
+/* not our code */
 
 #box1 {
     margin: 0 auto;
     text-align: center;
-    width: 1000px;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 15px;
-    margin-top: 70px;
-    border: 3px solid #ffffff;
-} 
+    margin-top: 30px;
+}
 
 #introduction {
     text-align: center;
-    font-size: 15px;
-    margin: 10px 10px 10px 10px ;
+    font-size: 28px;
+    margin: 10px 10px 10px 10px;
 }
 
 section {
@@ -87,16 +109,92 @@ section {
 }
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* this adds the "card" effect */
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
 }
 
-@media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .box {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 50px;
+}
+
+.container .box:hover .imgBox {
+    transform: translate(-3.5rem, -3.5rem);
+}
+
+.container .box:hover .content {
+    transform: translate(3.5rem, 3.5rem);
+}
+
+.imgBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+}
+
+.imgBox img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+    resize: both;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    z-index: 1;
+    align-items: flex-end;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+}
+
+.content h2 {
+    display: block;
+    font-size: 20px;
+    color: #111;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: 1px;
+}
+
+.content span {
+    color: #555;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+    .container .box:hover .content {
+        transform: translate(0, 3.5rem);
+    }
+
+    .container .box:hover .imgBox {
+        transform: translate(0, -3.5rem);
     }
 }
