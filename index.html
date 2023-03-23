@@ -6,21 +6,50 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <title>Start Game</title>
+    <script>
+      function show(){
+        var element = document.getElementById("goodbye");
+        element.classList.remove("woah");
+      }
+      function gonextpage(){
+        var element = document.getElementById("goodbye");
+        element.classList.add("woah");
+        setTimeout(zoom,1000);
+  }
+    function zoom(){
+      window.location.href = "index.html";
+    }
+    </script>
 <style>
 body {
     background-image: url('startbg.gif'); 
     background-repeat: repeat; 
     font-family: 'DotGothic16', sans-serif;
+    overflow: hidden;
 }
 
-.page {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+a:link {
+    text-decoration: none;
+    color: white;}
+
+
+a:visited {
+    color: white;
+    text-decoration: none;
 }
 
-.page-transition {
-  opacity: 0;
+
+a:hover {
+    color: white;
+    text-decoration: none;
 }
+
+
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
 
 .glow {
   font-size: 90px;
@@ -41,8 +70,13 @@ body {
 .box {
     padding-top: 400px;
     text-align: center;
+    height: 1080px;
+    width: 1920px;
 }
+a:hover { text-decoration: none; }
 
+
+a:active { text-decoration: none; }
 #img {
     animation: glow3 1s ease-in-out infinite alternate;
 }
@@ -68,16 +102,12 @@ body {
 }
 </style>
 <script>
-    function redirect() {
-        window.location.replace("menu.html");
-        window.location.href = ("menu.html");
-    }  
 </script>
 </head>
-<body class="page" onclick="redirect()">
-<div class="box">
+<body>
+  <a href="menu.html" ><div class="box">
 <h1 class="glow">Starry Sonata</h1>
 <p class="glow2">click anywhere to start</p>
-</div>
+</div></a>
 </body>
 </html> 
