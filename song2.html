@@ -159,22 +159,22 @@
 
 				if (position > hitZone.offsetTop && position < hitZone.offsetTop + hitZone.offsetHeight) {
 					if (note.classList.contains('up') && (keys.ArrowUp || keys.w)) {
-						score++;
+						score += 500;
 						updateScore();
 						note.remove();
 					}
 					if (note.classList.contains('down') && (keys.ArrowDown || keys.s)) {
-						score++;
+						score += 500;
 						updateScore();
 						note.remove();
 					}
 					if (note.classList.contains('left') && (keys.ArrowLeft || keys.a)) {
-						score++;
+						score += 500;
 						updateScore();
 						note.remove();
 					}
 					if (note.classList.contains('right') && (keys.ArrowRight || keys.d)) {
-						score++;
+						score += 500;
 						updateScore();
 						note.remove();
 					}
@@ -184,6 +184,7 @@
 					}
 				}
 				if (position > window.innerHeight) {
+					score -= 500;
 					note.remove();
 				}
 			}
