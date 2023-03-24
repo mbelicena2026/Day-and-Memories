@@ -135,6 +135,8 @@
 		</div>
 	</div>
 	<div id="stats">
+		<button class="btn btn-primary" onclick="startTimer()">Start Timer</button>
+                <p class="game-timer">Time remaining: <span id="timer">10</span> seconds</p>
 		<div class="score">0</div>
 	</div>
 
@@ -208,6 +210,36 @@
 			keys[e.key] = false;
 		});
 
+		 var remainingTime = 60;
+        var timerInterval;
+
+        // Timer
+        function startTimer() {
+            timerInterval = setInterval(function () {
+                remainingTime--;
+                document.getElementById("timer").innerHTML = remainingTime;
+                if (remainingTime === 0) {
+                    clearInterval(timerInterval);
+                    location.reload();
+                    alert("You ran out of time! Too bad.");
+                }
+            }, 1000);
+        }
+
+        let start = document.querySelector('#start');
+let stop  = document.querySelector('#stop');
+
+start.addEventListener('click', function() {
+	let timerId = setInterval(function() {
+		let date = new Date;
+		console.log(date.getMinutes() + ' ' + date.getSeconds());
+	}, 1000);
+});
+
+stop.addEventListener('click', function() {
+	clearInterval(timerId);
+});
+		
 		function gameLoop() {
 			requestAnimationFrame(gameLoop);
 			const now = performance.now();
