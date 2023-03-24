@@ -137,6 +137,7 @@
 	<div id="stats">
 		<div class="score">0</div>
 	</div>
+	    <button class="btn btn-primary" onclick="pause()">Pause</button>
 
 	<script>
 		//Vars
@@ -198,6 +199,11 @@
 			document.querySelector('#game').appendChild(newNote);
 			notes.push(newNote);
 			nextNoteTime = performance.now() + Math.floor(Math.random() * 1000) + 500;
+		}
+		
+		function pause() {
+			keys.disabled = true;
+			notes.disabled = true;
 		}
 
 		const keys = {};
